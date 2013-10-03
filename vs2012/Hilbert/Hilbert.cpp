@@ -20,8 +20,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	QueryPerformanceCounter(&start_PerformanceCount);   
 	/********************************************/
 
-
-
 	WORD nLevel = 4 ;
 	int nWidth = 1<<nLevel;
 	int nHeight = 1<<nLevel;
@@ -31,38 +29,20 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	CQuickHilbertCode qTree;
 
-// 	CFile f;
-// 	CFileException e;
-// 	TCHAR* pszFileName = _T("I:\\Open_File.dat");
-// 	if(!f.Open(pszFileName, CFile::modeCreate | CFile::modeWrite, &e))
-// 	{
-// 		TRACE(_T("File could not be opened %d\n"), e.m_cause);
-// 	}
-
-	
-
  	for(WORD i=0;i<nHeight;i++)
  	{
 		for(WORD j=0;j<nWidth;j++)
 		{
-			//nKey = qTree.GetQuickHilbertKey(j,i,nLevel);
+			nKey = qTree.GetQuickHilbertKey(j,i,nLevel);
 			//nKey2 = qTree.GetFRHilbertKey(j,i, nLevel);
 
 			//dif += abs(int(nKey2)-int(nKey));
 
 //			printf("%d\t",nKey);
-// 			if(j<1)
-// 			{
-//   				f.Write(&nKey, 4);
-// 			}
-
-
 		}
 // 		printf("\n");
 	}
 
-
-//  	f.Close();
 	printf("%lf", dif);
 	
 	/********************************************/
